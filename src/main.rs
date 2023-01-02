@@ -79,9 +79,57 @@ fn main() {
         println!("WORD IS {}", word);  
     }
     let st2 = st1.replace("R", "B");
+    println!("New string {}", st2);
 
 
-    
+    let st3 = String::from("s t y g h e k k q i");
+    let mut v1: Vec<char> = st3.chars().collect();
+    v1.sort();
+    v1.dedup();
+    for char in v1{
+        println!("{}", char);
+    }
+
+    let st4 = "Random String";
+    let mut st5: String = st4.to_string();
+    println!("{}", st5);
+
+    let byte_arr1 = st5.as_bytes();
+    let st6 = &st5[0..6];
+    // Empty the string
+    st5.clear();
+    let st6 = String::from("Just Some");
+    let st7 = String::from("words");
+    let st8 = st6 + &st7;
+
+    for char in st8.bytes(){
+        println!("{}", char);
+    }
+
+    let int_u8: u8 = 5;
+    let int2_u8: u8 = 3;
+    let int_u32 = (int_u8 as i32) + (int2_u8 as i32);
+
+    enum Days {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
+
+    impl Day {
+        fn is_weekend(&self) -> Day{
+            
+
+        }
+    }
+      
+
+
+
 
 
 }
