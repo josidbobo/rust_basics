@@ -110,22 +110,32 @@ fn main() {
     let int2_u8: u8 = 3;
     let int_u32 = (int_u8 as i32) + (int2_u8 as i32);
 
-    enum Days {
+    enum Day {
         Monday,
         Tuesday,
         Wednesday,
         Thursday,
-        Friday,
+        Friday, 
         Saturday,
         Sunday
     }
 
     impl Day {
-        fn is_weekend(&self) -> Day{
-            
-
+        fn is_weekend(&self) -> bool {
+            match self{
+                Day::Sunday | Day::Saturday => true,
+                _ => false, 
+            }
         }
     }
+
+    let today: Day = Day::Monday;
+    match today{
+         Day::Monday => println!("Everyone hates Monday"),
+         _ => println!("Day is not Monday"),
+    }
+    println!("{}", today.is_weekend());
+    
       
 
 
