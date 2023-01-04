@@ -5,6 +5,9 @@ use rand::Rng;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
+use crate::vector::v_ector_and_others;
+
+mod vector;
 
 fn main() { 
     println!("What is your name?");
@@ -135,11 +138,7 @@ fn main() {
          _ => println!("Day is not Monday"),
     }
     println!("{}", today.is_weekend());
-    
-      
 
-
-
-
+    v_ector_and_others();
 
 }
