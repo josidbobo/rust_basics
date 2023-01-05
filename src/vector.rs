@@ -15,6 +15,7 @@ pub fn v_ector_and_others() {
 
     for mut i in vec2{
         i *= 2;
+        println!("i is {}", i);
     }
 }
 

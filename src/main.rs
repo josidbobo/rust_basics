@@ -77,7 +77,7 @@ fn main() {
     // Strings
     let mut st1 = String::new();
     st1.push('R');
-    st1.push_str("equirement");
+    st1.push_str("requirement");
     for word in st1.split_whitespace(){
         println!("WORD IS {}", word);  
     }
