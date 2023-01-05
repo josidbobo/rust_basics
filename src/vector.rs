@@ -5,7 +5,7 @@ use::std::fmt::Display;
 pub fn v_ector_and_others() {
 
     let vec1: Vec<i32> = Vec::new();
-    let vec2 = vec![1,2,3,4];
+    let mut vec2 = vec![1,2,3,4];
 
     let second = &vec2[1];
     match vec2.get(1){
@@ -13,9 +13,16 @@ pub fn v_ector_and_others() {
         None => println!("No 2nd value"),
     }
 
-    for mut i in vec2{
-        i *= 2;
-        println!("i is {}", i);
+    for i in &mut vec2{
+        *i *= 2;
+        println!("i is {}", i)
     }
+    for i in &vec2{
+        println!("{}", i);
+    }
+
+    println!("Vec length {}", vec2.len());
+    // {:?} Gets the item to be removed or referenced
+    println!("Pop operation element {:?}", vec2.pop());
 }
 
