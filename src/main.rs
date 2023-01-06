@@ -5,7 +5,7 @@ use rand::Rng;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
-use crate::vector::v_ector_and_others;
+use crate::vector::{v_ector_and_others, get_sum_gen};
 
 mod vector;
 
@@ -140,5 +140,28 @@ fn main() {
     println!("{}", today.is_weekend());
 
     v_ector_and_others();
+    println!("5 + 4 = {}", get_sum_gen(5, 4));
+    println!("Function result is {:?}", get_2(5));
+
+    let (var1, var2) = get_2(5);
+    print!("Numbers {} {} ", var1, var2);
+
+    let list_or = vec![1,2,4,3,4];
+    println!("The sum of list is {}", sum_list(&list_or));
 
 }
+
+
+fn get_2(x: i32) -> (i32, i32) {
+    // or x + y without semicolon to return
+    return (x+1, x + 2);
+}
+
+fn sum_list(list: &[i32]) -> i32{
+    let mut sum = 0;
+    for &i in list.iter(){
+        sum += &i;
+    }
+    return sum;
+}
+

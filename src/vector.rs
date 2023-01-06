@@ -1,6 +1,6 @@
 #![allow(unused)]
 
-use::std::fmt::Display;
+use::std::ops::Add;
 
 pub fn v_ector_and_others() {
 
@@ -22,7 +22,11 @@ pub fn v_ector_and_others() {
     }
 
     println!("Vec length {}", vec2.len());
+    println!("Vec elements are {:?}", vec2);
     // {:?} Gets the item to be removed or referenced
     println!("Pop operation element {:?}", vec2.pop());
 }
 
+pub fn get_sum_gen <T:Add<Output = T>>(x: T, y: T) -> T{
+    return x + y;
+}
