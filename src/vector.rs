@@ -36,7 +36,7 @@ pub fn get_sum_gen <T:Add<Output = T>>(x: T, y: T) -> T{
 
 pub fn hash_map(){
     let mut heroes = HashMap::new();
-    heroes.insert("SuperSTAR", "Amigos");
+    heroes.insert("Batman", "Amigos");
     heroes.insert("Flash", "DCUniverse");
 
     for (k, v) in heroes.iter(){
@@ -53,8 +53,62 @@ pub fn hash_map(){
         println!("There is no batman and the match wasn't called");
     }
 
-    
-
-
 println!("----This is the end of v_ectors_and_others file----")
+}
+
+pub fn struct_s(){
+    const PI: f32 = 3.141592;
+    struct SizedRectangle<T, U>{
+        height: T,
+        width: U,
+    }
+
+    struct Rectangle{ length: f32, width: f32}
+    struct Circle{length: f32, width: f32}
+
+    let rec = SizedRectangle{
+        height: 4, width: 45.3
+    };
+
+    trait Shape{
+        // The new function serves as a instantiating constructor
+        fn new(length: f32, width: f32) -> Self;
+        fn area(&self) -> f32;
+    }
+
+    impl Shape for Rectangle{
+        fn new(length: f32, width: f32) -> Rectangle {
+            return Rectangle{length, width};
+        }
+        fn area(&self) -> f32{
+            return (self.length * self.width);
+        }
+    }
+
+    impl Shape for Circle{
+        fn new(length: f32, width: f32) -> Circle{
+            return Circle {length,width};
+        }
+        fn area(&self) -> f32 {
+            return (self.length / 2.0).powf(2.0) * PI * 2.0;
+        }
+    }
+
+
+    struct Customer{
+        name: String,
+        address: String,
+        balance: f32,
+    }
+
+    let mut bob = Customer{
+        name: String::from("Maazi"),
+        address: String::from("4, Ekwueme street"),
+        balance: 45.4,
+    };
+
+    bob.address = String::from("5, Chukwujike street");
+
+
+
 }
