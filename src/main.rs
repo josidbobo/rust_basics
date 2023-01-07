@@ -5,7 +5,7 @@ use rand::Rng;
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
-use crate::vector::{v_ector_and_others, get_sum_gen};
+use crate::vector::{v_ector_and_others, get_sum_gen, hash_map};
 
 mod vector;
 
@@ -140,6 +140,7 @@ fn main() {
     println!("{}", today.is_weekend());
 
     v_ector_and_others();
+    hash_map();
     println!("5 + 4 = {}", get_sum_gen(5, 4));
     println!("Function result is {:?}", get_2(5));
 
@@ -149,6 +150,25 @@ fn main() {
     let list_or = vec![1,2,4,3,4];
     println!("The sum of list is {}", sum_list(&list_or));
 
+    let mut str11 = String::from("World");
+    let str22 = str11.clone();
+    change_string(&mut str11);
+
+
+}
+
+fn print_string(x: String) {
+    println!("A string {}", x);
+}
+
+fn print_return_string(x: String) -> String {
+    println!("The string is {}", x);
+    x
+}
+
+fn change_string(name: &mut String){
+    name.push_str(" is happy");
+    println!("Message is {}", name);
 }
 
 
