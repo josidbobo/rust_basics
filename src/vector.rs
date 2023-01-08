@@ -3,6 +3,11 @@
 use::std::ops::Add;
 use::std::collections::HashMap;
 
+
+/// Crates: Modules that produce a library or executable
+/// Modules: Organize and handle privacy
+/// Packages: Build, test and Share crates.
+/// Paths: A way of naming an item such as a struct, function.
 pub fn v_ector_and_others() {
 
     let vec1: Vec<i32> = Vec::new();
@@ -56,8 +61,10 @@ pub fn hash_map(){
 println!("----This is the end of v_ectors_and_others file----")
 }
 
+// Structs and Traits
 pub fn struct_s(){
     const PI: f32 = 3.141592;
+    // Struct that takes generic type
     struct SizedRectangle<T, U>{
         height: T,
         width: U,
@@ -90,9 +97,13 @@ pub fn struct_s(){
             return Circle {length,width};
         }
         fn area(&self) -> f32 {
-            return (self.length / 2.0).powf(2.0) * PI * 2.0;
+            return (self.length / 2.0).powf(2.0) * PI;
         }
     }
+
+    let my_circle = Circle::new(4.3, 5.2);
+    let my_rec = Rectangle::new(2.0, 1.4);
+    println!("This is the area of my rec = {}", my_rec.area());
 
 
     struct Customer{
