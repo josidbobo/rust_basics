@@ -105,7 +105,6 @@ pub fn struct_s(){
     let my_rec = Rectangle::new(2.0, 1.4);
     println!("This is the area of my rec = {}", my_rec.area());
 
-
     struct Customer{
         name: String,
         address: String,

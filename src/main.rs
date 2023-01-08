@@ -6,8 +6,10 @@ use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 use crate::vector::{v_ector_and_others, get_sum_gen, hash_map, struct_s};
+use crate::restaurant::order_food;
 
 mod vector;
+mod restaurant;
 
 fn main() { 
     println!("What is your name?");
@@ -153,6 +155,7 @@ fn main() {
     let str22 = str11.clone();
     change_string(&mut str11);
     struct_s();
+    order_food();
 
 
 }
