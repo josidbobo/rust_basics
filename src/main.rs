@@ -173,11 +173,9 @@ fn main() {
         Ok(file) => file,
         Err(error) => panic!("Problem creating file {}", error),
     };
-    
+
     write!(output, "Just some words indicating that write works").expect(
         "Failed to write to file");
-
-    let buf: Buffer = Buffer::new();
 
 
 }
