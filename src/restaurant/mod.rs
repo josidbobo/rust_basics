@@ -26,7 +26,7 @@ mod pizza_order{
             serve_customer(cust_pizza);
         }
         fn serve_customer(cust_pizza: super::Pizza){
-            println!("The customer is served a regular pizza with {}", cust_pizza.topping);
+            println!("The customer is served a regular pizza with {}, {} and {}", cust_pizza.topping, cust_pizza.cheese, cust_pizza.dough);
         }
     }
 }

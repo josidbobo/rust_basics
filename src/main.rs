@@ -158,22 +158,45 @@ fn main() {
     order_food();
 
 
+    /// Result has 2 varians Ok and Error
+    /// @Enum Result<T, E>{
+    /// Ok(T),
+    /// Err(E),
+    /// }
+    /// where T represents the data type Of the value returned
+    /// and E is the type of Error
+    panic!("Wahala Wahala Wahala"); // This function prints an error statement to the terminal
+
+    let path = "lines.txt";
+    let output = File::create(path);
+    let mut output = match output{
+        Ok(file) => file,
+        Err(error) => panic!("Problem creating file {}", error),
+    };
+    
+    write!(output, "Just some words indicating that write works").expect(
+        "Failed to write to file");
+
+    let buf: Buffer = Buffer::new();
+
+
 }
 
 fn print_string(x: String) {
     println!("A string {}", x);
 }
 
+// Function to print and return a string as it is
 fn print_return_string(x: String) -> String {
     println!("The string is {}", x);
     x
 }
 
+// Function to push a string to the end of the String stack
 fn change_string(name: &mut String){
     name.push_str(" is happy");
     println!("Message is {}", name);
 }
-
 
 fn get_2(x: i32) -> (i32, i32) {
     // or x + y without semicolon to return
