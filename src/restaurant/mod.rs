@@ -19,7 +19,7 @@ mod pizza_order{
         fn seat_at_table(){
             println!("Customer seated at table");
         }
-
+    
         pub fn take_order(){
             seat_at_table();
             let cust_pizza: super::Pizza = super::Pizza::lunch("Vegies");
@@ -31,6 +31,7 @@ mod pizza_order{
     }
 }
 
+/// Function calling the module and that contains all the modules
 pub fn order_food(){
     crate::restaurant::pizza_order::help_customer::take_order();
 }

@@ -174,12 +174,19 @@ fn main() {
         Err(error) => panic!("Problem creating file {}", error),
     };
 
-    write!(output, "Just some words indicating that write works").expect(
+    write!(output, "Just some words to be written to the file").expect(
         "Failed to write to file");
 
+    // Unwrapped gives us the content we want instead of the Result
+    let input = File::open(path).unwrap();
+    let buffered = BufReader::new(input);
+
+    for line in buffered.lines(){
+          println!("{}", line.unwrap());
+    }
 
 }
-
+// Function to print just a string out in the console. And the best aspect of this is that you get to reconcile it and reprimand and 
 fn print_string(x: String) {
     println!("A string {}", x);
 }
