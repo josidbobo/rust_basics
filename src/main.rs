@@ -165,8 +165,10 @@ fn main() {
     /// }
     /// where T represents the data type Of the value returned
     /// and E is the type of Error
-    panic!("Wahala Wahala Wahala"); // This function prints an error statement to the terminal
+    
+    //panic!("Wahala Wahala Wahala"); // This function prints an error statement to the terminal
 
+    /// File creation and readintg starts here
     let path = "lines.txt";
     let output = File::create(path);
     let mut output = match output{
@@ -174,7 +176,7 @@ fn main() {
         Err(error) => panic!("Problem creating file {}", error),
     };
 
-    write!(output, "Just some words to be written to the file").expect(
+    write!(output, "Just some words\nto be written to the file").expect(
         "Failed to write to file");
 
     // Unwrapped gives us the content we want instead of the Result
@@ -184,6 +186,20 @@ fn main() {
     for line in buffered.lines(){
           println!("{}", line.unwrap());
     }
+
+    // The creation and reading of a file in rust program
+    // output2 is the file that has been read and checked for errors if any
+    let output2 = File::create("rand.txt");
+    let output2 = match output2 {
+        Ok(file) => file,
+        Err(error) => match error.kind(){
+            ErrorKind::NotFound => match File::create("rand.tst"){
+                Ok(fc) => fc,
+                Err(e) => panic!("Error, can't create file {:?}", error),
+            },
+            _other_error => panic!("Problem opening file {:?}", _other_error),
+        },
+    };
 
 }
 // Function to print just a string out in the console. And the best aspect of this is that you get to reconcile it and reprimand and 
