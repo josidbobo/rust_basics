@@ -201,6 +201,16 @@ fn main() {
         },
     };
 
+    let mut arr82 = [1,2,3,4];
+    for val in arr82.iter(){
+        println!("Array items are {}", val);
+    }
+
+    arr82.into_iter();
+
+    let mut new_itr = arr82.iter();
+    println!("1st value {:?}", new_itr.next());
+
 }
 // Function to print just a string out in the console. And the best aspect of this is that you get to reconcile it and reprimand and 
 fn print_string(x: String) {
