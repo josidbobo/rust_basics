@@ -7,8 +7,10 @@ use std::fs::File;
 use std::cmp::Ordering;
 use crate::vectors::{v_ector_and_others, get_sum_gen, hash_map, struct_s};
 use crate::restaurant::order_food;
+use crate::c::closure::close;
 
 mod vectors;
+mod c;
 mod restaurant;
 
 fn main() { 
@@ -193,9 +195,9 @@ fn main() {
     let output2 = match output2 {
         Ok(file) => file,
         Err(error) => match error.kind(){
-            ErrorKind::NotFound => match File::create("rand.tst"){
+            ErrorKind::NotFound => match File::create("rand.txt"){
                 Ok(fc) => fc,
-                Err(e) => panic!("Error, can't create file {:?}", error),
+                Err(e) => panic!("Error, can't create file {:?}", e),
             },
             _other_error => panic!("Problem opening file {:?}", _other_error),
         },

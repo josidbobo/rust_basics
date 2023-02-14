@@ -1,4 +1,4 @@
-mod closure{
+pub mod closure{
     pub fn close(){
         let can_vote = |age : i16|{
             age >= 18
