@@ -151,7 +151,7 @@ fn main() {
     print!("Numbers {} {} ", var1, var2);
 
     let list_or = vec![1,2,4,3,4];
-    println!("The sum of list is {}", sum_list(&list_or));
+     println!("The sum of list is {}", sum_list(&list_or));
 
     let mut str11 = String::from("World");
     let str22 = str11.clone();
@@ -213,6 +213,8 @@ fn main() {
     let mut new_itr = arr82.iter();
     println!("1st value {:?}", new_itr.next());
 
+    println!("----This is where the closure function starts-----")
+    close();
 }
 // Function to print just a string out in the console. And the best aspect of this is that you get to reconcile it and reprimand and 
 fn print_string(x: String) {
