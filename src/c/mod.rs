@@ -17,6 +17,7 @@ pub mod closure{
     samp1 = 10;
     println!("samp1 = {}", samp1);
 
+    // function indicating passing a function as a parameter using generic
     fn use_func<T>(a: i32, b: i32, func: T) -> i32 where T: Fn(i32, i32) -> i32{
         func(a, b)
     }
