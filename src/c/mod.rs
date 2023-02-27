@@ -1,8 +1,8 @@
 pub mod closure{
     pub fn close(){
         // basic function to return true or false based on the value passed
-        let can_vote = |age : i16|{
-            age >= 18;
+        let can_vote = |age : i16| -> bool{
+            age >= 18
         };
         println!("Can vote : {}", can_vote(4));
 
@@ -18,13 +18,13 @@ pub mod closure{
     println!("samp1 = {}", samp1);
 
     fn use_func<T>(a: i32, b: i32, func: T) -> i32 where T: Fn(i32, i32) -> i32{
-        func(a, b);
+        func(a, b)
     }
 
     let sum = |a , b| a+b;
     let prod = |a, b| a * b;
-    println!("5 + 4 = {}", use_func(5,4, sum));
-    println!("5 + 7 = {}", use_func(5,7, prod));
+    println!("5 + 4 = {:#?}", use_func(5,4, sum));
+    println!("5 x 7 = {:#?}", use_func(5,7, prod));
 
     }
 }

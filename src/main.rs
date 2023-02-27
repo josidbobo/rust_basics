@@ -213,7 +213,7 @@ fn main() {
     let mut new_itr = arr82.iter();
     println!("1st value {:?}", new_itr.next());
 
-    println!("----This is where the closure function starts-----")
+    println!("----This is where the closure function starts-----");
     close();
 }
 // Function to print just a string out in the console. And the best aspect of this is that you get to reconcile it and reprimand and 
