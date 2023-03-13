@@ -26,6 +26,35 @@ pub mod closure{
     let prod = |a, b| a * b;
     println!("5 + 4 = {:#?}", use_func(5,4, sum));
     println!("5 x 7 = {:#?}", use_func(5,7, prod));
-
     }
-}
+
+    fn pointers() ->  {
+        pub struct TreeNode<T> {
+            pub left: Option<Box<TreeNode<T>>>,
+            pub right: Option<Box<TreeNode<T>>>,
+            pub key: T,
+        }
+
+        impl<T> TreeNode<T>{
+            pub fn new(key: T) -> Self{
+                TreeNode { left: None, right: None, key }
+            }
+            pub fn left(mut self, node: TreeNode<T>) -> Self{
+                    self.left = Some(Box::new(node));
+                    self
+            }
+            pub fn right(mut self, node: TreeNode<T>) -> Self{
+                    self.right = Some(Box::new(node));
+                    self
+                }
+            }
+
+            let node1 = TreeNode::new(1).
+            left(TreeNode::new(0)).right(TreeNode::new(2));
+
+            node1
+
+        }
+        
+        
+    }
