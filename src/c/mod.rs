@@ -1,4 +1,8 @@
+
+
 pub mod closure{
+    use std::{thread, time::Duration};
+
     pub fn close(){
         // basic function to return true or false based on the value passed
         let can_vote = |age : i16| -> bool{
@@ -28,7 +32,7 @@ pub mod closure{
     println!("5 x 7 = {:#?}", use_func(5,7, prod));
     }
 
-    fn pointers() ->  {
+    pub fn binary() {
         pub struct TreeNode<T> {
             pub left: Option<Box<TreeNode<T>>>,
             pub right: Option<Box<TreeNode<T>>>,
@@ -52,9 +56,23 @@ pub mod closure{
             let node1 = TreeNode::new(1).
             left(TreeNode::new(0)).right(TreeNode::new(2));
 
-            node1
+            pub struct Bank{
+                balance: f32,
+            }
+
+            fn withdraw(the_bank: &mut Bank, amt: f32){
+                the_bank.balance -= amt;
+            }
+            let mut bank: Bank = Bank{balance: 100.0};
+            withdraw(&mut bank, 5.0);
+            println!("Balance is {}", bank.balance);
+
+            let customer = |amt : f32|{
+                withdraw( &mut bank, amt);
+                println!("Balance is {}", bank.balance)
+            };
+            
 
         }
-        
-        
+                
     }
