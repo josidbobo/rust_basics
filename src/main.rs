@@ -1,13 +1,15 @@
 #![allow(unused)]
 
-use std::io;
+use std::time::Duration;
+use std::{io, thread};
 use rand::Rng;
+
 use std::io::{Write, BufReader, BufRead, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 use crate::vectors::{v_ector_and_others, get_sum_gen, hash_map, struct_s};
 use crate::restaurant::order_food;
-use crate::c::closure::close;
+use crate::c::closure::{close, binary};
 
 mod vectors;
 mod c;
@@ -203,6 +205,22 @@ fn main() {
         },
     };
 
+
+    println!("Thread and Concurrency starts here");
+    let thread1 = thread::spawn(|| {
+        for i in 1..25{ 
+            println!("Spawned thread: {}", i);
+            thread::sleep(Duration::from_millis(1))
+        }
+    });
+    for i in 1..20{
+        println!("Main thread {}", i);
+        thread::sleep(Duration::from_millis(1));
+    } 
+
+    thread1.join().unwrap();
+
+
     let mut arr82 = [1,2,3,4];
     for val in arr82.iter(){
         println!("Array items are {}", val);
@@ -215,6 +233,7 @@ fn main() {
 
     println!("----This is where the closure function starts-----");
     close();
+    binary();
 }
 // Function to print just a string out in the console. And the best aspect of this is that you get to reconcile it and reprimand and 
 fn print_string(x: String) {
