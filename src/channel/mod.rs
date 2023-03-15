@@ -1,11 +1,11 @@
-mod channel {
+pub mod channel {
     #![allow(unused)]
     use std::env;
     use std::io::Write;
     use std::sync::mpsc::channel;
     use std::{io, thread};
 
-    fn main(){
+    fn chan_nel(){
     let (tx, rx) = channel();
 
     let sender = std::thread::spawn(move || {
