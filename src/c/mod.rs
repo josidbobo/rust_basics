@@ -1,4 +1,5 @@
-
+// ALT + SHIF + UP will copy and move a given line or highlighed lines
+// ALT + ARROW will move the copied line/lines in any direction
 pub mod closure {
     use std::{thread, time::Duration, cmp::Ordering};
     use std::rc::Rc;
@@ -36,6 +37,9 @@ pub mod closure {
 
     /// Binary Tree implementation in Rust
     pub fn binary(){
+
+        // A Smart pointer (BOX) gives added functionalities to a referenced item not just storing the data on the heap
+        // but also storing the POINTER on the stack
         pub struct TreeNode<T> {
             pub left: Option<Box<TreeNode<T>>>,
             pub right: Option<Box<TreeNode<T>>>,
@@ -46,11 +50,13 @@ pub mod closure {
             pub fn new(key: T) -> Self{
                 TreeNode { left: None, right: None, key }
             }
-            pub fn left(mut self, node: TreeNode<T>) -> Self{
+
+            pub fn left(mut self, node: TreeNode<T>) -> Self {
                     self.left = Some(Box::new(node));
                     self
             }
-            pub fn right(mut self, node: TreeNode<T>) -> Self{
+
+            pub fn right(mut self, node: TreeNode<T>) -> Self {
                     self.right = Some(Box::new(node));
                     self
                 }
@@ -72,7 +78,7 @@ pub mod closure {
             } 
         
             thread1.join().unwrap();
-        
+
             pub struct Bank{
                 balance: f32,
             }
