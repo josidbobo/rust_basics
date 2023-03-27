@@ -139,8 +139,6 @@ pub mod closure {
                 }
 
                 println!("Total {}", bank.lock().unwrap().balance);
-
-
         }
                 
     }
